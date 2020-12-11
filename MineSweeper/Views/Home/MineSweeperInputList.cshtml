@@ -1,0 +1,47 @@
+﻿@model MineSweeper.Models.MineSweeperDTO
+
+@{
+    ViewData["Title"] = "MineSweeperInputList";
+}
+
+<h1>Mine Sweeper Input - Total : <b id="totalMineSweeperInputListCount"></b></h1>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+
+<table class="table" id="Table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Input)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RequestProcessTimes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AddedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ModifiedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IPAddress)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            mineSweeperInputListLoad();
+            mineSweeperInputCount();
+        });
+    </script> 
+}

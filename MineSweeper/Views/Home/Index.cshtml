@@ -1,0 +1,64 @@
+﻿@model IEnumerable<MineSweeper.Models.MineSweeperDTO>
+
+@{
+    ViewData["Title"] = "MineSweeper";
+}
+
+<h1>Mine Sweeper</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Input)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Output)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RequestProcessTimes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AddedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ModifiedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IPAddress)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.Raw(item.Input.Trim().Replace("\n", "<br/>"))
+                </td>
+                <td>
+                    @Html.Raw(item.Output.Trim().Replace("\n", "<br/>"))
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RequestProcessTimes)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AddedDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ModifiedDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IPAddress)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
